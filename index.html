@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>بازی منچ</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      direction: rtl;
+      background: #f8f8f8;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #222;
+    }
+    #dice {
+      font-size: 80px;
+      margin: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #006699;
+    }
+  </style>
+</head>
+<body>
+  <h1>بازی منچ</h1>
+  <p>برای شروع بازی، تاس بنداز!</p>
+  <div id="dice">🎲</div>
+  <button onclick="rollDice()">تاس بنداز</button>
+
+  <script>
+    function rollDice() {
+      const roll = Math.floor(Math.random() * 6) + 1;
+      const diceFaces = ['⚀','⚁','⚂','⚃','⚄','⚅'];
+      document.getElementById('dice').innerText = diceFaces[roll - 1] + ' ' + roll;
+    }
+  </script>
+</body>
+</html>
